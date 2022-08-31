@@ -14,6 +14,7 @@ from typing import List
 
 version = json.load(open("../config.json"))['version']
 BASE_PATH = os.path.normpath(os.path.dirname(__file__) + "/../../") + "/"
+OUTPUT_DIR = BASE_PATH + "/output"
 
 
 def matches_any(filename, extensions):
@@ -82,17 +83,17 @@ def main():
     """
     Script entry point
     """
-    output_dir = BASE_PATH + "/output"
-    os.makedirs(output_dir, exist_ok=True)
-    # --- essential archive ---
-    data_paths_essential = [("fonts/", "", [".txt", ".ttf"]),
-                            ("images/", "", [".svg", ".txt", ".md"])]
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    # --- essential archive with emojis and flags in ~128x128 ---
+    data_paths_essential = [("fonts/", "", [".txt", ".ttf", ".json"]),
+                            ("images/noto/cpngs/", "", [".png", ".txt", ".md"])]
     output_filename_essential = f"scistag_essentials_{version.replace('.', '_')}.zip"
-    build_archive(data_paths_essential, output_dir, output_filename_essential)
-    # --- rendered svg archive ---
-    data_paths_svg = [("images/", "", [".png", ".txt", ".md"])]
-    output_filename_rendered = f"scistag_rendered_svgs_{version.replace('.', '_')}.zip"
-    build_archive(data_paths_svg, output_dir, output_filename_rendered)
+    build_archive(data_paths_essential, OUTPUT_DIR, output_filename_essential)
+    # --- svg archive for emojis ---
+    data_paths_svg = [("images/noto/emojis/", "", [".svg", ".txt", ".md"]),
+                      ("images/noto/flags/waved-svg/", "", [".svg", ".txt", ".md"])]
+    output_filename_rendered = f"scistag_vector_emojis_{version.replace('.', '_')}.zip"
+    build_archive(data_paths_svg, OUTPUT_DIR, output_filename_rendered)
 
 
 if __name__ == "__main__":
