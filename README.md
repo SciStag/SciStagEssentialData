@@ -20,6 +20,8 @@ This repository contains the essential resource data required by the [SciStag](h
 
 It bundles data from the following OpenSource projects - for detailed information about licenses and restrictions visit the sites linked below. Copies of all licenses are  though also stored in each of the data folders of this repository.
 
+## License
+
 ---
 
 ## fonts/Roboto:
@@ -47,5 +49,9 @@ The [Roboto font](https://fonts.google.com/specimen/Roboto) - licensed and distr
   
 ## images/noto
 * Emojis and country flags from the [Noto Emoji](https://github.com/googlefonts/noto-emoji) project. Tools and most image resources are under the Apache license, version 2.0. Flag images under third_party/region-flags are in the public domain or otherwise exempt from copyright (more info).
+
+---
+
+All build scripts in this repository are Copyright (c) 2022-present Michael Ikemann and released under the terms of the **MIT License**.
 
 ---
