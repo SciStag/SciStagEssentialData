@@ -1,5 +1,5 @@
 ## SciStag essential data package
-Version 0.0.1
+Version 0.0.2
 
 This repository contains the essential resource data required by the [SciStag](https://github.com/scistag/scistag) module for Python.
 
