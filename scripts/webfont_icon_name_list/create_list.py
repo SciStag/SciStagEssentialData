@@ -9,7 +9,7 @@ import sys
 
 SOURCE_FILE = os.path.dirname(__file__) + "/../../fonts/MaterialDesign/_variables.scss"
 OUTPUT_FILENAME = os.path.normpath(
-    os.path.dirname(__file__) + "/../../fonts/MaterialDesign/material_design_icon_names.json")
+    os.path.dirname(__file__) + "/../../data/material_design/material_design_icon_names.json")
 os.makedirs(os.path.dirname(OUTPUT_FILENAME), exist_ok=True)
 
 icon_dictionary = {}

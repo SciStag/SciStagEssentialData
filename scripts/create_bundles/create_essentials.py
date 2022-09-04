@@ -43,6 +43,8 @@ def store_files(all_files, archive_name):
         with open(BASE_PATH + src_name, "rb") as src_file:
             data = src_file.read()
         zip_archive.writestr(tar_name, data)
+    zip_archive.writestr("README.md", open(BASE_PATH + "/README.md", "r").read())
+    zip_archive.writestr("LICENSE.md", open(BASE_PATH + "/LICENSE.md", "r").read())
     zip_archive.close()
     with open(archive_name, "wb") as output_file:
         zip_data = target_stream.getvalue()
@@ -85,7 +87,8 @@ def main():
     """
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     # --- essential archive with emojis and flags in ~128x128 ---
-    data_paths_essential = [("fonts/", "", [".txt", ".ttf", ".json"]),
+    data_paths_essential = [("data/", "", [".json", ".csv"]),
+                            ("fonts/", "", [".txt", ".ttf", ".json"]),
                             ("images/noto/cpngs/", "", [".png", ".txt", ".md"])]
     output_filename_essential = f"scistag_essentials_{version.replace('.', '_')}.zip"
     build_archive(data_paths_essential, OUTPUT_DIR, output_filename_essential)

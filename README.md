@@ -63,7 +63,7 @@ the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 ---
 
-## data/unicode
+## data/emoji
 
 The files generated in data/emoji are based upon the official Unicode data files from www.unicode.org, Copyright ©
 1991-2022 Unicode, Inc, licensed under the terms of
